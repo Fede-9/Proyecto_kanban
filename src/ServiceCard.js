@@ -1,4 +1,4 @@
-import Contenedor from './components/ContForm'
+import Contenedor from './components/Contenedor'
 
 
 function App() {
