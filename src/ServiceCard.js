@@ -1,5 +1,5 @@
-import Form from './components/Form'
-// import Columna from './components/Columna'
+// import Form from './components/Form'
+import Columna from './components/Columna'
 
 
 
@@ -10,7 +10,7 @@ function App() {
         <div className="app-wrapper">
           <div className='row bg-gradient'>
             
-            <Form />
+            <Columna />
           </div>
         </div>
         
