@@ -1,4 +1,4 @@
-import Contenedor from './components/Contenedor'
+import Contenedor from './components/ContForm'
 
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
   
     <div className="container mt-5 p-5">
         <div className="app-wrapper">
-          <div>
+          <div className='container'>
             <Contenedor />
           </div>
         </div>
