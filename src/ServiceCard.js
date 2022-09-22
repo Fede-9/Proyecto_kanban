@@ -1,4 +1,6 @@
-import Contenedor from './components/Contenedor'
+import Form from './components/Form'
+// import Columna from './components/Columna'
+
 
 
 function App() {
@@ -6,8 +8,9 @@ function App() {
   
     <div className="container mt-5 p-5">
         <div className="app-wrapper">
-          <div className='container'>
-            <Contenedor />
+          <div className='row bg-gradient'>
+            
+            <Form />
           </div>
         </div>
         

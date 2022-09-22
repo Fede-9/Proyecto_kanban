@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react'
 import Form from './Form'
 
 
-const ContForm = () => {
+const ContForm = ({tarea, tareas}) => {
 
         const [columna, setColumna] = useState([{
           id: 1,
@@ -29,12 +29,26 @@ const ContForm = () => {
                 <div className='columna w-100 h-auto rounded-3 d-flex flex-column justify-content-between text-white p-4 p-2' >
                   
                     
-                      <div className='row  justify-content-center '>
-                          <div className='col-3 justify-content-between align-items-center border-bottom'>
-                              <h4 className="font text-dark rounded-pill m-2 p-2">{columna.nombre}</h4>
-                              
-                          </div>
-                        
+                        {
+                            columna.map((col) =>{
+                                return (
+                                <div key={col.id} className='row  justify-content-center '>
+                      
+                                    <div className='col-3 justify-content-between align-items-center border-bottom'>
+                                        <h4 className="font text-dark rounded-pill m-2 p-2">{col.nombre}</h4>
+                                    
+                                    </div>
+                                    <div  className='container'>
+                                        <li className='list-group-item'>
+                                            <span className='lead'>{tarea.titulo}</span>
+                                            {/* <button className='btn btn-danger'>Eliminar</button>
+                                            <button className='btn btn-warning'>Editar</button> */}
+                                        </li>
+                                    </div>
+                                </div>
+                            )})
+                        }
+ 
                           <div className='container h-auto p-2 me-5 d-flex justify-content-between flex-column'>
                               <div>
                                   { <Form />}
@@ -42,8 +56,11 @@ const ContForm = () => {
                           </div>
                       </div>
 
+
+                        
+
                   </div>
-            </div>
+            
 
         </Fragment>
       );
