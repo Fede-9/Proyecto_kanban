@@ -26,11 +26,11 @@ const ContForm = ({tarea, tareas}) => {
     return (
         <Fragment>
           
+            <div className='m-2 p-2' >
               {       columna.map((col) =>(
-                <div className='m-2 p-1' >
 
 
-                            <div className='container bg-danger w-50 h-auto rounded-3 d-flex flex-column text-white p-4 p-2'>
+                            <div key={col.id} className='container bg-danger w-50 h-auto rounded-3 d-flex flex-column text-white m-2 p-2'>
                                 <div className='d-flex justify-content-between align-items-center border-bottom'>
                                     <h4 className="font text-dark rounded-pill m-2 p-2">{col.nombre}</h4>
                                 </div>
@@ -44,9 +44,9 @@ const ContForm = ({tarea, tareas}) => {
                                 </div>
                             </div>
 
-                    </div>
-                            ))      
-                }
+                        ))      
+                    }
+            </div>
             
 
         </Fragment>

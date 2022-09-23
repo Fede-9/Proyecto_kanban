@@ -10,6 +10,7 @@ const Formulario = () => {
     const [editMode, setEditMode] = useState(false)
     const [id, setId] = useState("")
   
+    // validacion de la tarea
     const addTask = (e) => {
       e.preventDefault()
       if (isEmpty(task)){
@@ -54,7 +55,7 @@ const Formulario = () => {
     return (
         <Fragment>
             <div className='container mt-5'>
-               <h4>Lista de Tareas</h4>
+               {/* <h4>Lista de Tareas</h4> */}
                <div className='row'>
                     <div className='col-5'>
 
@@ -96,7 +97,7 @@ const Formulario = () => {
 
                     <div className="col-4">
                         <h4 className="text-center">
-                        {editMode ? "Modificar Tarea" : "Agregar Tarea"}
+                        {/* {editMode ? "Modificar Tarea" : "Agregar Tarea"} */}
                         </h4>
                         <form onSubmit={editMode ? saveTask : addTask}>
                             <input type="text" className="form-control mb-2" placeholder="Ingrese titulo..."
@@ -104,7 +105,7 @@ const Formulario = () => {
                                 value={task}
                             />
                             <button className={editMode ? "btn btn-warning btn-block" : "btn btn-dark btn-block"} type="submit">
-                                {editMode ? "Guardar" : "+ Agregar"}
+                                {editMode ? "Guardar" : "+ Agregar Tarea"}
                             </button>
                         </form>
                      </div>
