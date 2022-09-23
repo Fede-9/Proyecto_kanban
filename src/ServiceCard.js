@@ -1,4 +1,4 @@
-import Columna from './components/Columna'
+import Contenedor from './components/Contenedor'
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
         <div className="app-wrapper ">
           
             
-            <Columna />
+            <Contenedor />
           
         </div>
         
