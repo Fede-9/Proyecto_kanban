@@ -25,8 +25,8 @@ const Contenedor = () => {
         <Fragment>
             
                 {    columna.map((col) =>(
-
-                            <div key={col.id}>
+                        <div key={col.id} className='container'>
+                            <div className='card'>
                                 <h4>{col.nombre}</h4>
                                 <div>
                                     <Columna />
@@ -34,6 +34,8 @@ const Contenedor = () => {
                                 </div>
                             </div>
                                 
+
+                        </div>
                                 
                 ))        
                 }
@@ -42,6 +44,3 @@ const Contenedor = () => {
 }
  
 export default Contenedor;
-
-
-

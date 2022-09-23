@@ -9,10 +9,12 @@ const Columna = () => {
     return (
         <Fragment>
 
-            <div className="Column">
-                <div className="Column__title"></div>
+            <div className="">
+                <div className="">
+                    
+                    <Formulario />
+                </div>
             
-                <Formulario />
             </div>
 
         </Fragment>
