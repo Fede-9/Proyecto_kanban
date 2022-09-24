@@ -24,9 +24,9 @@ const Contenedor = () => {
         <Fragment>
                 {   
                     columna.map((col) =>(
-                        <div key={col.id} className="row mr-3">
-                            <div className='col-11 ml-4 mt-3 mb-3 card'>
-                                <h4>{col.nombre}</h4>
+                        <div key={col.id} className="row ml-3 text-center" style={{height:"500px", width:"300px"}}>
+                            <div className='col-11 ml-2 mt-3 mb-3 card' style={{background:"#fa5f49"}}>
+                                <h4 className='mt-3' style={{color:"white", fontweight:"bold"}}>{col.nombre}</h4>
                                 <div>
                                     <Columna />
                                 </div>

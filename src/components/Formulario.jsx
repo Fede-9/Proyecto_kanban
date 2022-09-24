@@ -58,12 +58,12 @@ const Formulario = () => {
                 <div className='col-11 ml-2'>
                 {
                   size(tasks) == 0 ? (
-                    <h4 className='text-center'>No hay tareas</h4>
+                    <h4 className='text-center lead' style={{color:"black"}}>No hay tareas</h4>
                   ) : (
                         <ul className='list-group'>
                             {
                                 tasks.map((task) =>(
-                                    <li key={task.id} className='list-group-item list-group-item-warning'>
+                                    <li key={task.id} className='list-group-item list-group-item-danger'>
                                         <span className='lead'>{task.name}</span>
                                         <button 
                                           className='btn btn-danger btn-sm float-right mx-1'
@@ -88,7 +88,7 @@ const Formulario = () => {
               </div>
             </div>
 
-            <div className='row'>
+            <div className='row' style={{position:"absolute", bottom:"6px"}}>
               <div className="col-11 ml-2">
                 <h4 className="text-center"></h4>
 
