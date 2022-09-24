@@ -90,8 +90,8 @@ const Formulario = () => {
             </div>
 
             <div className='row' style={{position:"absolute", bottom:"6px"}}>
-              <div className="col-11 ml-2">
-                <h4 className="text-center"></h4>
+              <div className="col-11 ml-3">
+                {/* <h4 className="text-center"></h4> */}
 
                 <form className='flex-row' onSubmit={editMode ? saveTask : addTask}>
                     <input type="text" className="form-control mb-2" placeholder="ingrese tarea"

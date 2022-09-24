@@ -23,6 +23,7 @@ const Contenedor = () => {
 
     return (
         <Fragment>
+            <h1 style={{color: "orange", position:"absolute", top:"5px", textAlign:"center"}} className="">Tablero Kanban</h1>
                 {   
                     columna.map((col) =>(
                         <div key={col.id} className="row ml-3 text-center" style={{height:"500px", width:"300px"}}>
