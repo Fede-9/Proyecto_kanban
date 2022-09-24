@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 
 import Formulario from './Formulario'
 
+// test
 const Columna = () => {
     return (
         <Fragment>
