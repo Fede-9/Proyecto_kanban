@@ -10,20 +10,23 @@ const Contenedor = () => {
     },{
         id: 2,
         nombre:'En Proceso',
+    
 
     },{
         id: 3,
         nombre:'En Pausa',
+        
 
     },{
         id: 4,
         nombre:'Realizado',
+        
 
     }])
 
     return (
         <Fragment>
-            <h1 style={{color: "orange", position:"absolute", top:"5px", textAlign:"center"}} className="">Tablero Kanban</h1>
+            <h1 style={{color: "orange", position:'absolute', top:"5px", textAlign:"center"}} className="">Tablero Kanban</h1>
                 {   
                     columna.map((col) =>(
                         <div key={col.id} className="row ml-3 text-center" style={{height:"500px", width:"300px"}}>
