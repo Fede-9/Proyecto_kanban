@@ -98,12 +98,11 @@ const Formulario = () => {
                         value={task}
                     />
                     <button className={editMode ? "btn btn-warning btn-block" : "btn btn-dark btn-block"} type="submit">
-                        {editMode ? <i class="bi bi-save"></i> : <i class="bi bi-file-earmark-plus"></i>}
+                        {editMode ? <i class="bi bi-save"> Save</i> : <i class="bi bi-file-earmark-plus"> Add</i>}
                     </button>
                 </form>
               </div>
             </div>
-            
         </Fragment>
       );
 }
