@@ -54,64 +54,56 @@ const Formulario = () => {
     
     return (
         <Fragment>
-            <div className='container mt-5'>
-               {/* <h4>Lista de Tareas</h4> */}
-               <div className='row'>
-                    <div className='col-5'>
+            <div className='mt-3'>
+              <div className='row'>
+                <div className='col-11 ml-2'>
+                {
+                  size(tasks) == 0 ? (
+                    <h4 className='text-center lead' style={{color:"black"}}>No hay tareas</h4>
+                  ) : (
+                        <ul className='list-group'>
+                            {
+                                tasks.map((task) =>(
+                                    <li key={task.id} className='list-group-item list-group-item-danger'>
+                                        <span className='lead'>{task.name}</span>
+                                        <button 
+                                          className='btn btn-danger btn-sm float-right mx-1'
+                                          onClick={() => deleteTask(task.id)}
+                                        >
+                                          <i class="bi bi-trash"></i>
+                                        </button>
 
-                    {
-                        size(tasks) == 0 ? (
-                            <h4>No hay tareas</h4>
-                        ) : (
-
-                                <ul className='list-group' >
-
-                                    {
-                                        tasks.map((task) =>(
-                                            <li key={task.id} className='list-group-item'>
-                                                <span className='lead'>{task.name}</span>
-                                                <p>Crear tablero kanban</p>
-                                                <button 
-                                                className='btn btn-danger btn-sm float-right mx-1'
-                                                onClick={() => deleteTask(task.id)}>
-                                                    Eliminar
-                                                </button>
-
-                                                <button 
-                                                className='btn btn-warning btn-sm float-right'
-                                                // onClick={() => editarTarea(tarea.id)}
-                                                onClick={() => editTask(task)}
-                                                >
-                                                    Editar
-                                                </button>
-
-                                            </li>
-
-                                        ))
-                                    }
-
-                                </ul>
-                        )
-                    }
-                    </div>
-
-                    <div className="col-4">
-                        <h4 className="text-center">
-                        {/* {editMode ? "Modificar Tarea" : "Agregar Tarea"} */}
-                        </h4>
-                        <form onSubmit={editMode ? saveTask : addTask}>
-                            <input type="text" className="form-control mb-2" placeholder="Ingrese titulo..."
-                                onChange={(text) => setTask(text.target.value)}
-                                value={task}
-                            />
-                            <button className={editMode ? "btn btn-warning btn-block" : "btn btn-dark btn-block"} type="submit">
-                                {editMode ? "Guardar" : "+ Agregar Tarea"}
-                            </button>
-                        </form>
-                     </div>
+                                        <button 
+                                          className='btn btn-warning btn-sm float-right'
+                                          onClick={() => editTask(task)}
+                                        >
+                                          <i class="bi bi-pencil-square"></i>
+                                        </button>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                      )
+                }
                 </div>
+              </div>
             </div>
-            
+
+            <div className='row' style={{position:"absolute", bottom:"6px"}}>
+              <div className="col-11 ml-2">
+                <h4 className="text-center"></h4>
+
+                <form className='flex-row' onSubmit={editMode ? saveTask : addTask}>
+                    <input type="text" className="form-control mb-2" placeholder="ingrese tarea"
+                        onChange={(text) => setTask(text.target.value)}
+                        value={task}
+                    />
+                    <button className={editMode ? "btn btn-warning btn-block" : "btn btn-dark btn-block"} type="submit">
+                        {editMode ? <i class="bi bi-save"> Save</i> : <i class="bi bi-file-earmark-plus"> Add</i>}
+                    </button>
+                </form>
+              </div>
+            </div>
         </Fragment>
       );
 }
