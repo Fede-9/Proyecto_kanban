@@ -2,8 +2,8 @@ import Contenedor from './components/Contenedor'
 
 function App() {
   return (
-    <div className="container d-flex bg-dark p-4 align-items-center justify-content-center vh-100">
-      <div className='container d-flex bg-dark'>
+    <div className="d-flex align-items-center justify-content-center vh-100" style={{background: "black"}}>
+      <div className='d-flex' style={{background: "black"}}>
         <Contenedor />
       </div>   
     </div> 
