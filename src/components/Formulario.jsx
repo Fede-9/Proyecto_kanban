@@ -49,7 +49,7 @@ const Formulario = () => {
     const saveTask = (e) => {
       e.preventDefault()
       if (isEmpty(task)){
-        console.log("Task empty")
+        console.log("Tarea vacia")
         return
       }
   
