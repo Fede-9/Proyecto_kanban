@@ -1,11 +1,11 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import {isEmpty, size} from "lodash";
 
 import shortid from "shortid";
 
 const Formulario = () => {
   
-    const descripcionTarea = 'Armar tablero Kanban'
+    const descripcionTarea = 'Lorem ipsum consectetuer.'
 
     const [task, setTask] = useState("")
     const [tasks, setTasks] = useState([])
@@ -56,7 +56,7 @@ const Formulario = () => {
     
     return (
         <Fragment>
-            <div className='mt-3'>
+            <div className='mt-2'>
               <div className='row'>
                 <div className='col-11 ml-2'>
                 {
@@ -66,9 +66,10 @@ const Formulario = () => {
                         <ul className='list-group'>
                             {
                                 tasks.map((task) =>(
-                                    <li key={task.id} className='list-group-item list-group-item-danger'>
-                                        <span className='lead'>{task.name}</span>
-                                        <p>{descripcionTarea}</p>
+                                    <li key={task.id} className='list-group-item list-group-item-danger mb-2'>
+                                        <span className='lead' style={{color: 'red', fontWeight: 'bold'}}>{task.name}</span>
+                                        <p style={{color:'black'}}>{descripcionTarea}</p>
+                                        
                                         <button 
                                           className='btn btn-danger btn-sm float-center mx-3'
                                           onClick={() => deleteTask(task.id)}
@@ -91,13 +92,14 @@ const Formulario = () => {
                 </div>
               </div>
             </div>
+            
+            <div style={{clear: 'both'}}></div>
 
-            <div className='row' style={{position:"absolute", bottom:"6px"}}>
+            <div className='row mt-3' style={{bottom:"6px"}}>
               <div className="col-11 ml-3">
-                {/* <h4 className="text-center"></h4> */}
 
                 <form className='flex-row' onSubmit={editMode ? saveTask : addTask}>
-                    <input type="text" className="form-control mb-2" placeholder="ingrese titulo..."
+                    <input type="text" className="form-control mb-2" placeholder="Add task"
                         onChange={(text) => setTask(text.target.value)}
                         value={task}
                     />
