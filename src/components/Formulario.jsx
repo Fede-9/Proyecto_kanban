@@ -5,13 +5,30 @@ import shortid from "shortid";
 
 const Formulario = () => {
   
-    const descripcionTarea = 'Lorem ipsum consectetuer.'
+    
+    const descripcionTarea = 'Lorem ipsum consectetuer.'  
 
-    const [task, setTask] = useState("")
-    const [tasks, setTasks] = useState([])
+    const [task, setTask] = useState('')
+    // const [tasks, setTasks] = useState([])
     const [editMode, setEditMode] = useState(false)
     const [id, setId] = useState("")
+
+    // localStorage
+    const [tasks, setTasks] = useState(() => {
+      const taskLocal = localStorage.getItem("dato");
+      if (taskLocal) {
+          return JSON.parse(taskLocal);
+      }
+      else {
+        return [];
+      }
+    });
+
+    useEffect(() => {
+        localStorage.setItem("dato", JSON.stringify(tasks));
+    }, [tasks]);
   
+    
     // validacion de la tarea
     const addTask = (e) => {
       e.preventDefault()
@@ -53,6 +70,8 @@ const Formulario = () => {
       setEditMode(true)
       setId(theTask.id)
     }
+
+
     
     return (
         <Fragment>
